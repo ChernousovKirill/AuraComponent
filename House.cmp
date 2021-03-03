@@ -1,0 +1,28 @@
+<aura:component controller="HouseController" >
+    <aura:attribute name="houses" type="List" />
+    <aura:attribute name="key" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <lightning:input type="text" name="searchKey" label="Enter"
+                     aura:id="searchKey" onchange="{!c.searchKeyChange}" />
+    <table class="slds-table slds-table_bordered slds-table_striped slds-table_cell-buffer slds-table_fixed-layout">
+        <thead>
+            <tr class="slds-text-heading_label">              
+                <th scope="col"><div class="slds-truncate" title="Name">Name</div></th>
+                <th scope="col"><div class="slds-truncate" title="Price">Price</div></th>         
+                <th scope="col"><div class="slds-truncate" title="Adress">Adress</div></th>            
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.houses}" var="house">
+                <tr>
+                    <td><div class="slds-truncate" 
+            title="{!house.Name}">{!house.Name}</div></td>
+                     <td><div class="slds-truncate" 
+            title="{!house.Price}">{!house.Price}</div></td>
+                      <td><div class="slds-truncate" 
+            title="{!house.Adress}">{!house.Adress}</div></td>                 
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+</aura:component>
