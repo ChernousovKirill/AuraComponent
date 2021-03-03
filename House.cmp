@@ -18,9 +18,9 @@
                     <td><div class="slds-truncate" 
             title="{!house.Name}">{!house.Name}</div></td>
                      <td><div class="slds-truncate" 
-            title="{!house.Price}">{!house.Price}</div></td>
+            title="{!house.Price}">{!house.Priece__c}</div></td>
                       <td><div class="slds-truncate" 
-            title="{!house.Adress}">{!house.Adress}</div></td>                 
+            title="{!house.Adress}">{!house.Adress__c}</div></td>                 
                 </tr>
             </aura:iteration>
         </tbody>
