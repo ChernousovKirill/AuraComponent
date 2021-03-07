@@ -2,12 +2,12 @@ public class HouseController {
 
    @AuraEnabled
     public static List<House__c> getHouses(String houseName) {
-      return [SELECT Id, Name, Priece__c, Adress__c FROM House__c];
+      return [SELECT Id, Name, Priece__c, Adress__c, Number_Child__c FROM House__c];
     }
    @AuraEnabled
     public static List<House__c> findByName(String searchKey) {
        String name = + searchKey + '%';
-       return [SELECT Id, Name, Adress__c, Priece__c 
+       return [SELECT Id, Name, Adress__c, Priece__c, Number_Child__c
                FROM House__c
                WHERE Name LIKE :name];
     }
