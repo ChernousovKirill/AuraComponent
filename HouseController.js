@@ -1,5 +1,4 @@
-({
-	    doInit: function(component, event, helper) {
+({	    doInit: function(component, event, helper) {
         helper.House(component);
     },
     searchKeyChange: function(component, event) {
@@ -13,5 +12,13 @@
             component.set("v.houses", a.getReturnValue());
         });
         $A.enqueueAction(action);
-    }   
-})
+    },
+
+ createNewHouse : function(component, event, helper) {
+        var recordEvent=$A.get("e.force:createRecord");
+        recordEvent.setParams({
+            "entityApiName": "House__c"
+        });
+        recordEvent.fire();
+ }
+    })
